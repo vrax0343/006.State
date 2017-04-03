@@ -19,8 +19,11 @@ public class MainTest {
 		System.out.println("=======================================================");
 		
 		Unit knight = new Knight();
+		System.out.println(knight.toString());
 		Unit mage = new Mage();
+		System.out.println(mage.toString());
 		Unit citizen = new Citizen();
+		System.out.println(citizen.toString());
 		
 		
 		System.out.println("=======================================================");

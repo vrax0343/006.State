@@ -149,19 +149,11 @@ public class Unit implements Observer{
 	
 	
 	public void move(int x, int y){
-//		MapLimitCheck mlc = new MapLimitCheck();
-//		int tempX=this.locationX, tempY=this.locationY;
-//		tempX += x; tempY += y;
-//		this.setLocation(mlc.check(tempX), mlc.check(tempY));
-//		System.out.print(this.type+"가\t ");
-//		System.out.println(movement.getMovementType() +"로 이동합니다.");
 		System.out.println("---"+this.getType() + " is moving---");
-		System.out.print("[Before]: (" + this.locationX+","+this.locationY+")");
 		int[] tempIntArr=Move.move(this.getLocationX(),x,this.getLocationY(),y);
-		this.setLocation(tempIntArr[0], tempIntArr[1]);
-//		this.setLocationX(tempIntArr[0]);
-//		this.setLocationY(tempIntArr[1]);
-		System.out.println(" [After]: (" + this.locationX+","+this.locationY+")");
+		MapLimitCheck mlc = new MapLimitCheck();
+		
+		this.setLocation(mlc.check(tempIntArr[0]), mlc.check(tempIntArr[1]));
 		this.stackCountArr[1]+=1;
 		stackCounterCheck();
 	}
